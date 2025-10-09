@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - AfriBio Energies | Waste to Gas Process</title>
+    <meta name="description" content="See how AfriBio Energies converts school waste into clean cooking gas through our step-by-step biogas production process and technology.">
+    <meta property="og:title" content="How It Works - AfriBio Energies | Waste to Gas Process">
+    <meta property="og:description" content="Step-by-step guide: From school waste collection to clean biogas production for cooking.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="howitworks.css">
+</head>
+<body>
+    <!-- Navigation Overlay (Mobile) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M3 12h18M3 6h18M3 18h18"></path>
+        </svg>
+    </button>
+
+    <!-- Left Navigation -->
+    <nav class="nav-container" id="navContainer">
+        <div class="nav-brand">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <div class="nav-logo">
+                <span><img src="logo.png" alt="AfriBio Energies Logo"></span>
+                <span style="color: #006837;"> AfriBio</span>
+            </div>
+        </div>
+
+        <ul class="nav-menu" role="menubar">
+            <li class="nav-item" role="none">
+                <a href="index.html" class="nav-link" role="menuitem" data-tooltip="Home">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item" role="none">
+                <a href="Howitworks.html" class="nav-link active" role="menuitem" data-tooltip="How It Works">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>How It Works</span>
+                </a>
+            </li>
+            <li class="nav-item" role="none">
+                <a href="about.html" class="nav-link" role="menuitem" data-tooltip="About Us">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>About Us</span>
+                </a>
+            </li>
+            <li class="nav-item" role="none">
+                <a href="careers.html" class="nav-link" role="menuitem" data-tooltip="Careers / Vision Path">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span>Careers / Vision Path</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-footer">
+            <button class="nav-contact" aria-label="Contact">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Contact</span>
+            </button>
+            <button class="nav-collapse" id="navCollapse" aria-label="Collapse navigation">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content fade-in">
+                <div class="hero-badge">Turning Waste into Energy</div>
+                <h1 class="hero-title">From Sanitary Waste to Clean Energy</h1>
+                <p class="hero-subtitle">Discover how AfriBio transforms your school's biggest operational challenge into your most valuable asset. No manual handling, no disposal costs, just clean energy.</p>
+                <a href="#process" class="cta-button">See How It Works</a>
+            </div>
+        </section>
+
+        <!-- Process Steps -->
+        <section class="process-section" id="process">
+            <h2 class="section-title">The 4-Step Transformation Process</h2>
+            <div class="process-steps">
+                <!-- Step 1 -->
+                <div class="step" id="step1">
+                    <div class="step-image">
+                        <img src="safe.png" alt="Safe waste collection system">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Safe & Discreet Collection</h3>
+                        <p class="step-description">Our system connects directly to your existing sanitary infrastructure. No manual handling, no exposure risks.</p>
+                        <ul class="step-features">
+                            <li>Zero staff contact with waste</li>
+                            <li>Completely sealed system</li>
+                            <li>Uses existing school facilities</li>
+                            <li>Automatic, sensor-based transfer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step" id="step2">
+                    <div class="step-image">
+                        <img src="wow.png" alt="Advanced processing technology">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Advanced Bio-Digester Processes</h3>
+                        <p class="step-description">Complete safety through controlled thermal treatment and bio-enzyme enhancement.</p>
+                        <ul class="step-features">
+                            <li>Pathogen-free processing</li>
+                            <li>Automated quality monitoring and processing</li>
+                            <li>Fail-safe safety protocols</li>
+                            <li>Optimal digestion preparation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step" id="step3">
+                    <div class="step-image">
+                        <img src="efficiency.png" alt="Anaerobic digestion process">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">High-Efficiency Energy Production</h3>
+                        <p class="step-description">Specialized bacteria break down waste to produce biogas, which then undergoes a seamless process that amplifies its energy potential and maximizes efficiency.</p>
+                        <ul class="step-features">
+                            <li>Higher energy gas production</li>
+                            <li>Year-round operation</li>
+                            <li>Scalable for any school size</li>
+                            <li>Consistent and powerful energy output</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step" id="step4">
+                    <div class="step-image">
+                        <img src="cook.png" alt="Clean gas distribution">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Pure Gas Distribution</h3>
+                        <p class="step-description">Triple-stage purification specializations delivers cooking gas that matches LPG performance.</p>
+                        <ul class="step-features">
+                            <li>89%-93% Biomethane purity</li>
+                            <li>Safe and reliable distribution</li>
+                            <li>24/7 supply assurance</li>
+                            <li>Meets national standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <h2 class="section-title">Transform Your School's Operations</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="benefit-title">Eliminate Disposal Costs</h3>
+                    <p class="benefit-description">Save KES 20,000-50,000 monthly by turning waste removal expense into energy production.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔥</div>
+                    <h3 class="benefit-title">Free Cooking Fuel</h3>
+                    <p class="benefit-description">Generate free gas equivalent to KES 50,000-200,000 monthly LPG or firewood costs.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3 class="benefit-title">Enhanced Safety</h3>
+                    <p class="benefit-description">Minimal to Zero-contact system eliminates health risks and safety hazards for your staff.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3 class="benefit-title">Environmental Leadership</h3>
+                    <p class="benefit-description">Demonstrate your commitment to sustainability and clean energy solutions. <br> Be among the first to try our system and promote a greener future.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Transform Your School?</h2>
+            <p class="cta-subtitle">Join the growing number of schools turning their biggest challenge into their greatest asset.</p>
+            <a href="index.html#contact" class="cta-button" style="background: white; color: var(--yellow);">Get Started Today</a>
+        </section>
+    </main>
+
+    <script src="howitworks.js"></script>
+</body>
+</html>
