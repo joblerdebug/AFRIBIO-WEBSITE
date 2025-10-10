@@ -82,7 +82,7 @@ section {
     left: 0;
     height: 100vh;
     width: auto;
-background: linear-gradient(165deg, #0a0f0a 0%, #064d24 35%, #21a45d 70%, #b9ff66 100%);
+    background: linear-gradient(165deg, #0a0f0a 0%, #064d24 35%, #21a45d 70%, #b9ff66 100%);
     z-index: 999;
     transition: var(--transition);
     display: flex;
