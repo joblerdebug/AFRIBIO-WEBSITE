@@ -218,3 +218,28 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Initialize on page load
 });
+
+// Add some interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    const imageCards = document.querySelectorAll('.image-card');
+    
+    imageCards.forEach(card => {
+        // Add click effect
+        card.addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+        });
+        
+        // Add keyboard navigation
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                this.click();
+            }
+        });
+        
+        // Make cards focusable
+        card.setAttribute('tabindex', '0');
+    });
+});

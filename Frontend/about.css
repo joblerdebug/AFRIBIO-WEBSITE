@@ -45,6 +45,44 @@ h3 {
     font-weight: 600;
     margin-bottom: 1rem;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #f8f8f8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 900px;
+    width: 100%;
+}
+.image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.image:hover {
+    transform: scale(1.05);
+}
+.image:hover img {
+    transform: scale(1.1);
+}
 p {
     margin-bottom: 1rem;
     max-width: 70ch;
@@ -446,25 +484,23 @@ box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: var(--transition);
 }
+
+.problem-card:nth-child(1) {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('financial-drain.png') center/cover;
+}
+.problem-card:nth-child(2) {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('cooking.jpg') center/cover;
+}
+.problem-card:nth-child(3) {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('educational.jpg') center/cover;
+}
+
+
 .problem-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(17, 17, 17, 0.1), 0 0 0 1px var(--gold);
 }
-.problem-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 1rem;
-    background-color: rgba(255, 214, 0, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.problem-icon svg {
-    width: 30px;
-    height: 30px;
-    color: #006837;
-}
+
 /* Mission Vision Section */
 .mission-vision {
     background-color: var(--white);
@@ -533,11 +569,42 @@ box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 8px 24px rgba(17, 17, 17, 0.06);
     padding: 2rem;
     transition: var(--transition);
+    animation: fadeInBackground 2s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    color: #333; /* Ensure text is visible initially */
+}
+.value-card:nth-child(1) {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('impact.jpg') center/cover;
+    color: white; /* White text for dark backgrounds */
+}
+.value-card:nth-child(2) {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('customer.png') center/cover;
+    color: white;
+}
+.value-card:nth-child(3) {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('practical.png') center/cover;
+    color: white;
+}
+.value-card:nth-child(4) {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('patnership.png') center/cover;
+    color: white;
 }
 .value-card:hover {
-    transform: translateY(-4px);
+    transform: scale(1.05) translateY(-4px);
     box-shadow: 0 12px 30px rgba(17, 17, 17, 0.1), 0 0 0 1px var(--gold);
 }
+@keyframes fadeInBackground {
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .value-card {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-image.jpg') center/cover;
+        color: white;
+    }
+}
+
 .value-icon {
     width: 50px;
     height: 50px;

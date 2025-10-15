@@ -177,22 +177,23 @@
                 </div>
                 <div class="cv-form fade-in">
                     <h3 style="margin-bottom: 1.5rem; text-align: center;">Submit Your Details</h3>
-                    <form id="cvForm">
+                    <form id="cvForm" netlify name="cv-application" enctype="multipart/form-data">
+                        <input type="hidden" name="form-name" value="cv-application">
                         <div class="form-group">
                             <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" class="form-control" required>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control">
+                            <input type="tel" id="phone" name="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="position">Position of Interest</label>
-                            <input type="text" id="position" class="form-control" placeholder="e.g., Project Manager, Engineer, etc.">
+                            <input type="text" id="position" name="position" class="form-control" placeholder="e.g., Project Manager, Engineer, etc.">
                         </div>
                         <div class="form-group">
                             <label>Upload Your CV</label>
@@ -202,12 +203,12 @@
                                     <span>Click to upload your CV</span>
                                     <small>(PDF, DOC, DOCX - Max 5MB)</small>
                                 </button>
-                                <input type="file" id="cvFile" accept=".pdf,.doc,.docx">
+                                <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Additional Information (Optional)</label>
-                            <textarea id="message" class="form-control" placeholder="Tell us about your skills, experience, or why you're interested in joining Afribio Energies..."></textarea>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your skills, experience, or why you're interested in joining Afribio Energies..."></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Submit Your CV</button>
                     </form>
