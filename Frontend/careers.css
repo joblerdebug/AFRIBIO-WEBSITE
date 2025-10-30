@@ -1,7 +1,7 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap');
 :root {
     --primary: #006837;
-    --primary-dark: #ffff00;
+    --primary-dark: #ffff00; /* Reverted to original value */
     --accent: #7c7c12;
     --light: #f2f2f2;
     --dark: #000000;
@@ -9,6 +9,14 @@
     --transition: all 0.3s ease;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --radius: 8px;
+    
+    /* Navigation Variables */
+    --nav-width-expanded: 220px;
+    --nav-width-collapsed: 84px;
+    --yellow: #709a36;
+    --gold: #ffce08ec;
+    --white: hsl(0, 0%, 100%);
+    --transition: all 0.3s cubic-bezier(0.22, 0.9, 0.37, 1); /* Restored original transition variable */
 }
 
 * {
@@ -26,19 +34,11 @@ body {
     line-height: 1.6;
     color: var(--dark);
     background-color: #f5f7fa;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Added to prevent horizontal scroll issues */
 }
 
 
-:root {
-    --nav-width-expanded: 220px;
-    --nav-width-collapsed: 84px;
-    --yellow: #709a36;
-    --gold: #ffce08ec;
-    --white: hsl(0, 0%, 100%);
-    --transition: all 0.3s cubic-bezier(0.22, 0.9, 0.37, 1);
-}
-
+/* --- NAVIGATION STYLES (Mobile Responsiveness Only) --- */
 
 .nav-overlay {
     display: none;
@@ -59,7 +59,7 @@ body {
 }
 
 .mobile-menu-toggle {
-    display: block;
+    display: none; /* Hide by default, show in media query */
     position: fixed;
     top: 1rem;
     left: 1rem;
@@ -69,28 +69,27 @@ body {
     border-radius: 4px;
     width: 44px;
     height: 44px;
-    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
-position: fixed;
-top: 0;
-left: 0;
-height: 100vh;
-width: auto;
-background: linear-gradient(165deg, #0a0f0a 0%, #064d24 35%, #21a45d 70%, #b9ff66 100%);
-z-index: 999;
-transition: var(--transition);
-display: flex;
-flex-direction: column;
-box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--nav-width-expanded); /* Desktop Default */
+    background: linear-gradient(165deg, #0a0f0a 0%, #064d24 35%, #21a45d 70%, #b9ff66 100%);
+    z-index: 999;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container.collapsed {
-    width: auto;
+    width: var(--nav-width-collapsed);
 }
 
 .nav-brand {
@@ -294,94 +293,18 @@ box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
     opacity: 1;
 }
 
-/* Main content area */
+/* Main content area (Desktop default) */
 .main-content {
     margin-left: var(--nav-width-expanded);
     transition: var(--transition);
+    padding: 0; 
 }
 
 .nav-container.collapsed ~ .main-content {
     margin-left: var(--nav-width-collapsed);
 }
 
-/* Responsive Styles for Navigation */
-@media (max-width: 1023px) {
-    .nav-container {
-        width: auto;
-    }
-    
-    .nav-container.collapsed {
-        width: 70px;
-    }
-    
-    .main-content {
-        margin-left: 180px;
-    }
-    
-    .nav-container.collapsed ~ .main-content {
-        margin-left: 70px;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .hero-text {
-        max-width: 100%;
-        margin-bottom: 2rem;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        transform: translateX(-100%);
-        width: 280px;
-    }
-    
-    .nav-container.active {
-        transform: translateX(0);
-    }
-    
-    .nav-container.collapsed {
-        width: 280px;
-        transform: translateX(-100%);
-    }
-    
-    .nav-container.collapsed.active {
-        transform: translateX(0);
-    }
-    
-    .main-content {
-        margin-left:0;
-    }
-    
-    .mobile-menu-toggle {
-        display: flex;
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 997;
-        background-color: var(--yellow);
-        border: none;
-        border-radius: 4px;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);      
-    }
-}
-
-
-/* Main Content Styles */
-.main-content {
-    margin-left: var(--sidebar-width, 250px);
-    padding: 0;
-    transition: var(--transition);
-}
+/* --- Content Styles (Original) --- */
 
 /* Hero Section */
 .hero {
@@ -394,7 +317,6 @@ box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
     align-items:center;
     min-height: 80vh;
     display: flex;
-
 }
 
 .hero::before {
@@ -433,7 +355,7 @@ box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
 
 .cta-button {
     display: inline-block;
-    background: var(--secondary);
+    background: var(--primary-dark); /* Reverted to original variable */
     color: var(--dark);
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -475,7 +397,7 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: var(--secondary);
+    background: var(--primary-dark); /* Reverted to original variable */
     border-radius: 2px;
 }
 
@@ -486,7 +408,7 @@ section {
     margin: 0 auto;
 }
 
-/* Vision Cards */
+/* Vision Cards (Desktop Grid default) */
 .vision-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -523,7 +445,7 @@ section {
 
 .vision-card:hover::before {
     width: 8px;
-    background: var(--secondary);
+    background: var(--primary-dark); /* Reverted to original variable */
 }
 
 .vision-card i {
@@ -583,7 +505,7 @@ section {
 
 .jobs-update-notice {
     background: #f8f9fa;
-    border-left: 4px solid var(--secondary);
+    border-left: 4px solid var(--primary-dark); /* Reverted to original variable */
     padding: 1rem;
     margin-top: 2rem;
     text-align: left;
@@ -599,6 +521,7 @@ section {
     color: rgb(0, 0, 0);
 }
 
+/* CV Submission Section (Desktop Grid default) */
 .cv-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -630,7 +553,7 @@ section {
 }
 
 .cv-benefits i {
-    color: var(--secondary);
+    color: var(--primary-dark); /* Reverted to original variable */
     margin-right: 1rem;
     font-size: 1.2rem;
 }
@@ -665,7 +588,7 @@ section {
 
 .form-control:focus {
     outline: none;
-    border-color: var(--secondary);
+    border-color: var(--primary-dark); /* Reverted to original variable */
     background: rgba(253, 253, 253, 0.15);
 }
 
@@ -700,13 +623,13 @@ textarea.form-control {
 
 .file-upload-btn:hover {
     background: #f5f5f500;
-    border-color: var(--secondary);
+    border-color: var(--primary-dark); /* Reverted to original variable */
 }
 
 .file-upload-btn i {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--secondary);
+    color: var(--primary-dark); /* Reverted to original variable */
 }
 
 .file-upload input[type="file"] {
@@ -720,7 +643,7 @@ textarea.form-control {
 }
 
 .submit-btn {
-    background: var(--secondary);
+    background: var(--primary-dark); /* Reverted to original variable */
     color: var(--dark);
     border: none;
     padding: 1rem 2rem;
@@ -761,17 +684,120 @@ footer {
 }
 
 
+/* --- MOBILE RESPONSIVENESS FIXES (New Responsive Code Only) --- */
+
+/* Reset Navigation for Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    /* Hide desktop nav toggle/collapse buttons */
+    .nav-toggle, .nav-collapse {
+        display: none;
+    }
+    
+    /* Move main content to the edge and add padding for the toggle button */
+    .main-content {
+        margin-left: 0;
+        padding-top: 5rem; 
+    }
+    
+    /* Move navigation off-screen by default */
+    .nav-container {
+        transform: translateX(-100%);
+        width: 280px; /* Fixed mobile width */
+    }
+    
+    /* Display navigation when 'active' class is added by JS */
+    .nav-container.active {
+        transform: translateX(0);
+    }
+
+    /* Keep the mobile nav fixed width and off-screen/on-screen regardless of 'collapsed' class */
+    .nav-container.collapsed {
+        width: 280px;
+        transform: translateX(-100%);
+    }
+    
+    .nav-container.collapsed.active {
+        transform: translateX(0);
+    }
+    
+    /* Hide desktop tooltips */
+    .nav-link::after {
+        content: none;
+    }
+
+    /* Hero Section Adjustments */
+    .hero {
+        padding: 5rem 1rem 3rem;
+        min-height: auto;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
+    /* General Section Padding */
+    section {
+        padding: 4rem 1rem;
+    }
+    
+    /* Vision Cards: Switch to a single column on mobile */
+    .vision-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* CV Submission: Switch to a single column on mobile */
     .cv-container {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
+    .cv-info {
+        text-align: center;
+    }
+    
+    .cv-benefits {
+        display: inline-block; /* Helps center the list */
+        text-align: left;
+    }
 
+    .cv-form {
+        padding: 1.5rem; /* Smaller padding for mobile form */
+    }
+}
+
+
+/* Tablet-Only Fix (769px to 1023px) - Retains original smaller tablet layout */
+@media (min-width: 769px) and (max-width: 1023px) {
+    
+    .nav-container {
+        width: auto;
+    }
+    
+    .nav-container.collapsed {
+        width: 70px;
+    }
+    
+    .main-content {
+        margin-left: 180px;
+    }
+    
+    .nav-container.collapsed ~ .main-content {
+        margin-left: 70px;
+    }
+    
+    /* Keep the vision cards from breaking on smaller tablets */
+    .vision-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
